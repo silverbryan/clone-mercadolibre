@@ -44,9 +44,8 @@ La API retorna un JSON con la siguiente forma:
 
 Podemos ver la documentación completa del endpoint en [este link](https://api.mercadolibre.com/sites/MLA/search?q=iphone).
 
-Nuestro Back-End va a tener dos rutas:
+Nuestro Back-End va a tener la ruta:
 - `/api/search`
-- `/api/search/sort`
 
 
 ### `/api/search`
@@ -78,12 +77,6 @@ Esta ruta recibe un queryString con un término de búsqueda. Por ejemplo: `/api
 
 Extra-Credit:
  En cada request de búsqueda, se deberá crear un caché, de tal manera que a la siguiente búsqueda no se use la API de Mercado Libre, si no que los datos se recuperen del caché. Tip: Usar un objeto (cada propiedad es al término de búsqueda y el valor de esa propiedad el arreglo de resultados.)
-
-
-Las formas de ordenar es siempre por `price` y puede ser:
-- `up`: ordenado de mayor a menor.
-- `down`: ordenado de menor a mayor.
-
 
 ## Front-End
 
