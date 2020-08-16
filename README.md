@@ -89,18 +89,18 @@ Un formulario **controlado** con un input de búsqueda, que dispare los requests
 ### Product Card
 
 En este componente se muestra un producto en particular, debemos mostrar:
-	- su imagen.
-	- su titulo.
-	- su precio (con la moneda).
-	- su condicion.
-	- si tiene stock o no.
+- su imagen.
+- su titulo.
+- su precio (con la moneda).
+- su condicion.
+- si tiene stock o no.
 
 ### Catalogo
 
 Este componente va mostrar un arreglo de productos (obtenidos de la API) usando Product Card. Tambien debe posibilitar:
-	* Poder ordenar los productos en base a su precio, de forma ascendete o descendente.
-	* Poder filtrar por condicion.
-	* Poder páginar los resultados de a 30 productos por página.
+* Poder ordenar los productos en base a su precio, de forma ascendete o descendente.
+* Poder filtrar por condicion.
+* Poder páginar los resultados de a 30 productos por página.
 
 
 
