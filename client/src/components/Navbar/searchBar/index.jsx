@@ -1,6 +1,9 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom'
+
+import './SearchBar.css';
+
 const SearchBar = () => {
     const dispatch = useDispatch();
     const history = useHistory();
@@ -37,7 +40,7 @@ const SearchBar = () => {
                 placeholder="Que estas buscando?"
             />
             <button type="submit" className="searchBar__button">
-                ?
+                Buscar
             </button>
         </form>
     );

@@ -1,0 +1,8 @@
+nav {
+    background: rgb(23,49,62);
+    background: linear-gradient(90deg, rgba(23,49,62,0.8687674899061186) 15%, rgba(21,68,67,0.5634453610545781) 51%, rgba(71,164,159,1) 83%);
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    height: 6rem;
+}
