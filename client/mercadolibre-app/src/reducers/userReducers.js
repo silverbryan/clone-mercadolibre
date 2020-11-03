@@ -1,10 +1,16 @@
-import { SEARCH_BY_QUERY, SEARCH_ALL, SEARCH_BY_CATEGORY } from '../actions/actionTypes';
+import {
+    SEARCH_BY_QUERY,
+    SEARCH_ALL,
+    SEARCH_BY_CATEGORY
+} from '../constants';
 
 const initialState = {
-    results: []
+    recentResults =[],
+    searchTerms =[],
 }
 
 function searchReducers(state = initialState, action) {
+    console.log(action);
     switch (action.type) {
         case SEARCH_BY_QUERY:
             return {
