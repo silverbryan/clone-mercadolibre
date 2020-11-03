@@ -1,10 +1,15 @@
 import React from 'react'
-import { Container } from 'reactstrap';
+import Catalogo from './components/catalogo';
+import { useSelector } from 'react-redux';
+// import { Container } from 'reactstrap';
 const HomePage = () => {
+
+    const products = useSelector(state => console.log(state));
+
     return (
-        <div className="content">
-            Hello
-        </div>
+        <Catalogo
+            products={products}
+        />
     );
 }
 

@@ -15,7 +15,7 @@ const SearchBar = () => {
     };
 
     const routeChange = () => {
-        let path = `/search/q/${searchTerm}`;
+        let path = `/search?q=${searchTerm}`;
         history.push(path);
     };
 
@@ -25,9 +25,9 @@ const SearchBar = () => {
             onSubmit={(event) => {
                 event.preventDefault();
                 if (searchTerm === "") {
-                    // dispatch(searchAll());
+                    dispatch(searchAll());
                 } else {
-                    // dispatch(searchByQuery(searchTerm));
+                    dispatch(searchByQuery(searchTerm));
                 }
                 routeChange();
             }}
