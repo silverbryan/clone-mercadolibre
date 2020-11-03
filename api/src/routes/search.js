@@ -6,10 +6,9 @@ const { PATH_BASE } = process.env;
 
 server.get('/', (req, res) => {
     const searchTerm = req.query.q;
-    let paging = req.query.page;
-    if (!paging) paging = 1;
+    const paging = req.query.page;
 
-    axios.get(PATH_BASE + '/sites/MLA/search?q=' + searchTerm + '&limit=30&offset=' + page)
+    axios.get(PATH_BASE + '/sites/MLA/search?q=' + searchTerm + '&limit=30&offset=' + paging)
         .then(response => {
             var data = response.data.results;
             var arrResponse = [];
