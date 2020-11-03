@@ -1,8 +1,9 @@
 import React from 'react'
+import SearchBar from './searchBar';
 
 const Navbar = () => {
     return (
-        <nav>Helo</nav>
+        <nav><SearchBar /></nav>
     );
 }
 
