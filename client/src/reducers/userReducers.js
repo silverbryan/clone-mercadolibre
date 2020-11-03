@@ -5,8 +5,8 @@ import {
 } from '../constants';
 
 const initialState = {
-    recentResults =[],
-    searchTerms =[],
+    recentResults: [],
+    searchTerms: [],
 }
 
 function searchReducers(state = initialState, action) {

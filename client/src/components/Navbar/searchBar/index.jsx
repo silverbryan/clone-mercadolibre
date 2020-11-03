@@ -22,9 +22,9 @@ const SearchBar = () => {
             onSubmit={(event) => {
                 event.preventDefault();
                 if (searchTerm === "") {
-                    dispatch(searchAll());
+                    // dispatch(searchAll());
                 } else {
-                    dispatch(searchByQuery(searchTerm));
+                    // dispatch(searchByQuery(searchTerm));
                 }
                 routeChange();
             }}
@@ -37,7 +37,7 @@ const SearchBar = () => {
                 placeholder="Que estas buscando?"
             />
             <button type="submit" className="searchBar__button">
-                <Search />
+                ?
             </button>
         </form>
     );
