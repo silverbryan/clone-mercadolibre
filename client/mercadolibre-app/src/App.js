@@ -1,7 +1,11 @@
 import './App.css';
 import { Switch, Route } from 'react-router-dom';
+
+//components
 import Navbar from './components/Navbar';
-import { route } from '../../../api/src/app';
+
+//pages
+import HomePage from './pages/HomePage';
 
 function App() {
   return (
