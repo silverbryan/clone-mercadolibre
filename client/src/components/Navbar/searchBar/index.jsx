@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom'
+import { searchByQuery } from '../../../actions/searchActions';
 
 import './SearchBar.css';
 
@@ -22,14 +23,12 @@ const SearchBar = () => {
     return (
         <form
             className="searchBar__form"
-            onSubmit={(event) => {
+            onSubmit={event => {
                 event.preventDefault();
-                if (searchTerm === "") {
-                    dispatch(searchAll());
-                } else {
-                    dispatch(searchByQuery(searchTerm));
+                if (searchTerm !== '') {
+                    dispatch(searchByQuery(searchTerm, 1));
+                    routeChange();
                 }
-                routeChange();
             }}
         >
             <input

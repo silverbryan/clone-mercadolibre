@@ -15,7 +15,7 @@ function searchReducers(state = initialState, action) {
         case SEARCH_BY_QUERY:
             return {
                 ...state,
-                results: action.results
+                recentResults: action.payload
             }
         case SEARCH_BY_CATEGORY:
             return {

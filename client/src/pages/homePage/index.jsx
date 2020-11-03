@@ -1,5 +1,5 @@
 import React from 'react'
-import Catalogo from './components/catalogo';
+import Catalogo from '../../components/catalogo';
 import { useSelector } from 'react-redux';
 // import { Container } from 'reactstrap';
 const HomePage = () => {

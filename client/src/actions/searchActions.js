@@ -5,12 +5,13 @@ import {
     SEARCH_BY_CATEGORY
 } from '../constants';
 
-export const searchByQuery = query => (dispatch) => {
-    axios.get('http://localhost:3001/api/search?q=' + query)
+export const searchByQuery = (query, page) => (dispatch) => {
+    axios.get('http://localhost:3001/api/search?q=' + query + '&page=' + page)
         .then((res) => {
+            console.log(res);
             dispatch({
                 type: SEARCH_BY_QUERY,
-                results: res.data.results
+                payload: res.data.results
             })
         }).catch((err) => console.log(err))
 };
