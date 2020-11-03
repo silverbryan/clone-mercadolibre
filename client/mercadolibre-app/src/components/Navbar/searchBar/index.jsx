@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useDispatch } from 'react-redux';
+import { useHistory } from 'react-router-dom'
 const SearchBar = () => {
     const dispatch = useDispatch();
     const history = useHistory();
+
     const [searchTerm, setSearchTerm] = useState("");
 
     const handleOnChange = (event) => {
@@ -13,9 +15,8 @@ const SearchBar = () => {
         let path = `/search/q/${searchTerm}`;
         history.push(path);
     };
+
     return (
-
-
         <form
             className="searchBar__form"
             onSubmit={(event) => {

@@ -1,0 +1,23 @@
+.searchBar__form {
+    display: flex;
+    justify-content: space-between;
+    width: 30%;
+    padding: 5px;
+    border: 1px solid #ccc9c9;
+    border-radius: 5px;
+}
+.searchBar__input {
+    background-color: transparent;
+    color: #424242;
+    border: none;
+    width: 90%;
+}
+
+.searchBar__button {
+    background-image: linear-gradient(to right, #8763fc, #806afd, #7a70fd, #7576fd, #707cfd, #6385ff, #578dff, #4d94ff, #39a0ff, #2caaff, #2cb4fe, #39bdfb);
+    border: none;
+    color: #FEFEFE;
+    padding: 5px 9px;
+    margin: 0;
+    border-radius: 50%;
+}
