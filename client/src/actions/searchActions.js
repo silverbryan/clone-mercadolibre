@@ -8,7 +8,6 @@ import {
 export const searchByQuery = (query, page) => (dispatch) => {
     axios.get('http://localhost:3001/api/search?q=' + query + '&page=' + page)
         .then((res) => {
-            console.log(res);
             dispatch({
                 type: SEARCH_BY_QUERY,
                 payload: res.data.results

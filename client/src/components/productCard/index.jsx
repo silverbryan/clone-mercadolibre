@@ -1,5 +1,7 @@
 import React from 'react'
 
+import './ProductCard.css';
+
 const ProductCard = ({ title, price, currency_id, available_quantity, thumbnail, condition }) => {
     return (
         <div className="productCard">
@@ -7,10 +9,15 @@ const ProductCard = ({ title, price, currency_id, available_quantity, thumbnail,
                 <img src={thumbnail} alt={title} />
             </div>
             <div className="productCard__title">
-                {title}
+                {title.length > 40
+                    ?
+                    title.substring(0, 40) + '..'
+                    :
+                    title
+                }
             </div>
             <div className="productCard__price">
-                {price}
+                $ {price + ' ' + currency_id}
             </div>
         </div>
     );
