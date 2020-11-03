@@ -6,6 +6,6 @@ const searchRouter = require("./search.js");
 const router = Router();
 
 router.use("/search", searchRouter);
-router.use('/products', productRouter);
+// router.use('/products', productRouter);
 
 module.exports = router;
