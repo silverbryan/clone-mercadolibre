@@ -1,5 +1,5 @@
 import React from 'react';
-import { Switch, Route, BrowserRouter } from 'react-router-dom';
+import { Switch, Link, Route, BrowserRouter } from 'react-router-dom';
 //components
 import Navbar from './components/Navbar';
 //pages
@@ -10,10 +10,13 @@ import './App.css';
 
 function App() {
   return (
-    <Switch>
-      <Navbar />
-      <SearchPage />
-    </Switch>
+    <div>
+      <Switch>
+        <Navbar />
+        <HomePage />
+      </Switch>
+    </div>
+
   );
 }
 
