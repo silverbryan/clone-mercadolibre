@@ -6,7 +6,7 @@ const ProductCard = ({ title, price, currency_id, available_quantity, thumbnail,
     return (
         <div className="productCard">
             <div className="productCard__image">
-                <img src={thumbnail} alt={title} />
+                <img className="img-fill" src={thumbnail} alt={title} />
             </div>
             <div className="productCard__title">
                 {title.length > 40

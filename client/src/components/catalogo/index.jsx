@@ -8,7 +8,7 @@ const Catalogo = ({ products }) => {
         <Container fluid={true}>
             <Row>
                 {products.map(product =>
-                    <Col lg="3" key={product.id}>
+                    <Col lg="3" md="4" sm="6" key={product.id}>
                         <ProductCard
                             key={product.id}
                             title={product.title}

@@ -1,0 +1,45 @@
+.navbar-menu {
+    background: rgb(71,164,159);
+    background: linear-gradient(90deg, rgba(71,164,159,1) 51%, rgba(21,68,67,1) 51%, rgba(71,164,159,1) 51%); 
+    width: 50%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: -50%;
+    display: flex;
+}
+
+.hamburger-menu {
+    width: 35px;
+    height: 30px;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.line {
+    width: 100%;
+    height: 3px;
+    background-color: #fff;
+    transition: all 0.8s;
+}
+
+.change {
+  left: 0;
+}
+
+.change .line-1 {
+  transform: rotateZ(-405deg) translate(-8px, 6px);
+}
+
+.change .line-2 {
+  opacity: 0;
+}
+
+.change .line-3 {
+  transform: rotateZ(405deg) translate(-8px, -6px);
+}

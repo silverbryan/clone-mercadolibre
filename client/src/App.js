@@ -11,9 +11,9 @@ import './App.css';
 function App() {
   return (
     <div>
+      <Navbar />
       <Switch>
-        <Navbar />
-        <HomePage />
+        <Route exact path="/search" component={SearchPage} />
       </Switch>
     </div>
 

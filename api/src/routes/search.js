@@ -13,6 +13,7 @@ server.get('/', (req, res) => {
             var data = response.data.results;
             var arrResponse = [];
             data.map(result => {
+
                 arrResponse.push(
                     {
                         id: result.id,
@@ -20,7 +21,7 @@ server.get('/', (req, res) => {
                         price: result.price,
                         currency_id: result.currency_id,
                         available_quantity: result.available_quantity,
-                        thumbnail: result.thumbnail,
+                        thumbnail: result.thumbnail.replace("-I", "-O"),
                         condition: result.condition,
                     }
                 )

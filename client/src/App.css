@@ -1,0 +1,26 @@
+@media (max-width: 575.98px) {
+    nav {
+        justify-content: space-around;
+    }
+    .navbar-menu {
+        width: 100%;
+        left: -100%;
+    }
+
+    .change {
+        left: 0;
+    }
+
+    .searchBar__form {
+        width: 70%;       
+    }
+}
+/* 
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) { ... }
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) { ... }
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { ... } */

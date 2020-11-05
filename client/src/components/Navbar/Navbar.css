@@ -1,8 +1,14 @@
 nav {
-    background: rgb(23,49,62);
-    background: linear-gradient(90deg, rgba(23,49,62,0.8687674899061186) 15%, rgba(21,68,67,0.5634453610545781) 51%, rgba(71,164,159,1) 83%);
+    background: rgb(71,164,159);
+    background: linear-gradient(90deg, rgba(71,164,159,0.7987394787016369) 51%, rgba(21,68,67,1) 51%, rgba(71,164,159,0.8043417195979954) 51%);
     display: flex !important;
     justify-content: center;
     align-items: center;
     height: 6rem;
+}
+
+.nav__brand {
+    color: #3B3B3B;
+    font-size: 1rem;
+    padding: 10px 0;
 }
