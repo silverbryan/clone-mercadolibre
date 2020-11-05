@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import SearchBar from './searchBar';
-import { Col, NavbarToggler, Collapse, Nav, NavItem, NavLink } from 'reactstrap';
-import HamburgerMenu from '../hamburgerMenu';
+import HamburgerMenu from './hamburgerMenu';
 
 import './Navbar.css'
 
@@ -11,10 +10,12 @@ const Navbar = () => {
     const toggleNavbar = () => setCollapsed(!collapsed);
 
     return (
-        <nav className="fixed-top">
-            <NavbarToggler onClick={toggleNavbar} className="mr-2" />
-            <SearchBar />
+        <nav className="navbar-principal fixed-top">
             <HamburgerMenu />
+            <div className="navbar__brand">
+                <img src="/mercado-libre-logo.svg" alt="mercadolibre icon" className="img-brand" />
+            </div>
+            <SearchBar />
         </nav>
     );
 }

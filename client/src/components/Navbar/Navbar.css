@@ -1,14 +1,19 @@
-nav {
+.navbar-principal {
     background: rgb(71,164,159);
     background: linear-gradient(90deg, rgba(71,164,159,0.7987394787016369) 51%, rgba(21,68,67,1) 51%, rgba(71,164,159,0.8043417195979954) 51%);
     display: flex !important;
     justify-content: center;
     align-items: center;
     height: 6rem;
+    padding: 0 20px;
 }
 
-.nav__brand {
-    color: #3B3B3B;
-    font-size: 1rem;
-    padding: 10px 0;
+.navbar__brand {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+}
+
+.img-brand {
+    width: 130px;
 }
