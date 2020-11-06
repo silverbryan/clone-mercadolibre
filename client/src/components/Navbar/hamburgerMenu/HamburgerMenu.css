@@ -1,6 +1,5 @@
 .navbar-menu {
-    background: rgb(71,164,159);
-    background: linear-gradient(90deg, rgba(71,164,159,1) 51%, rgba(21,68,67,1) 51%, rgba(71,164,159,1) 51%); 
+    background-color: #F4FCFF;
     width: 50%;
     height: 100%;
     position: fixed;
@@ -17,7 +16,7 @@
     top: 20px;
     left: 20px;
     cursor: pointer;
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: space-around;
 }
@@ -34,6 +33,7 @@
 }
 
 .change .line-1 {
+  background-color: #154443;
   transform: rotateZ(-405deg) translate(-8px, 6px);
 }
 
@@ -42,5 +42,6 @@
 }
 
 .change .line-3 {
+  background-color: #154443;
   transform: rotateZ(405deg) translate(-8px, -6px);
 }

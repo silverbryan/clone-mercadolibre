@@ -9,6 +9,9 @@
         width: 100%;
         left: -100%;
     }
+    .hamburger-menu {
+        display: flex;
+    }
     .change {
         left: 0;
     }
@@ -21,6 +24,9 @@
     .navbar__brand {
         display: none;
     }
+    .hamburger-menu {
+        display: flex;
+    }
     .searchBar__form {
         width: 80%;
     }
@@ -29,13 +35,10 @@
     .navbar__brand {
         display: none;
     }
+    .hamburger-menu {
+        display: flex;
+    }
     .searchBar__form {
         width: 80%;
     }
 }
-
-@media (min-width: 1200px) {
-    .navbar-menu {
-        display: none;
-    }
-} 
