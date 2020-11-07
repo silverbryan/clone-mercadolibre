@@ -6,6 +6,7 @@
     top: 0;
     left: -50%;
     display: flex;
+    flex-direction: column;
     border-radius: 5px;
 }
 
@@ -44,4 +45,22 @@
 .change .line-3 {
   background-color: #154443;
   transform: rotateZ(405deg) translate(-8px, -6px);
+}
+
+.navbar-brand-menu {
+  margin: 1.5rem 0;
+  display: flex;
+  justify-content: center;
+}
+
+.categorys-title {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin: 1rem 0;
+  text-align: center;
+}
+
+.categories__menu {
+  padding: 0 2rem;
 }

@@ -18,6 +18,9 @@
     .searchBar__form {
         width: 70%;       
     }
+    .categories__principal {
+        display: none;
+    }
 }
 
 @media (max-width: 767.98px) {
@@ -30,6 +33,9 @@
     .searchBar__form {
         width: 80%;
     }
+    .categories__principal {
+        display: none;
+    }
 }
 @media (max-width: 991.98px) {
     .navbar__brand {
@@ -40,5 +46,8 @@
     }
     .searchBar__form {
         width: 80%;
+    }
+    .categories__principal {
+        display: none;
     }
 }

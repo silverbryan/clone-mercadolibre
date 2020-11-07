@@ -1,29 +1,39 @@
-import React, { useState } from 'react'
+import React from 'react'
+import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
+import Categories from '../../categories';
+import { toggleNavbarMenu } from '../../../actions/applicationPropertiesActions';
 
 import './HamburgerMenu.css';
 
 const HamburgerMenu = () => {
 
-    const [active, setActive] = useState(false);
-
+    const dispatch = useDispatch();
+    const categories = useSelector(state => state.products.categories);
+    const toggleNavbar = useSelector(state => state.appProperties.toggleNavbar);
     const handleOnClick = event => {
-        setActive(!active);
+        dispatch(toggleNavbarMenu());
     }
     return (
-        <nav className={active ? 'navbar-menu change' : 'navbar-menu'}>
+        <nav className={toggleNavbar ? 'navbar-menu change' : 'navbar-menu'}>
             <div className="hamburger-menu" onClick={handleOnClick}>
                 <div className="line line-1"></div>
                 <div className="line line-2"></div>
                 <div className="line line-3"></div>
             </div>
-            <ul className="nav-links">
-                <li>
-                    <a href="#">About</a>
-                </li>
-                <li>
-                    <a href="#">About</a>
-                </li>
-            </ul>
+            <div className="navbar-brand-menu">
+                <Link to="/" onClick={handleOnClick}>
+                    <img src="/mercado-libre-logo.svg" alt="mercadolibre icon" className="img-brand" />
+                </Link>
+            </div>
+            <div className="categorys-title">
+                Categorias
+            </div>
+            <div className="categories__menu">
+                <Categories
+                    categories={categories}
+                />
+            </div>
         </nav>
     );
 }

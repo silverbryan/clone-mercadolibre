@@ -1,7 +1,6 @@
 import axios from 'axios';
 import {
     SEARCH_BY_QUERY,
-    SEARCH_ALL,
     SEARCH_BY_CATEGORY,
     SEARCH_IN_CACHE,
 } from '../constants';
@@ -33,21 +32,15 @@ export const searchByQuery = (cache, query, page) => (dispatch) => {
 
 };
 
-export const searchByCategory = name => dispatch => {
-    axios.get('http://localhost:3001/products/category/' + name)
+export const searchByCategory = (id, page) => dispatch => {
+    axios.get('http://localhost:3001/api/search?category=' + id + '&page=' + page)
         .then(res => {
             dispatch({
                 type: SEARCH_BY_CATEGORY,
-                results: res.data
+                payload: {
+                    currentSearchTerm: id,
+                    searchResults: res.data.results,
+                }
             })
         })
 }
-export const getPageResults = (searchTerm, page) => dispatch => {
-    axios.get('http://localhost:3001/api/search')
-        .then(res => {
-            dispatch({
-                type: SEARCH_ALL,
-                results: res.data.products
-            })
-        })
-} 
