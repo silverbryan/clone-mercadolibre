@@ -1,5 +1,6 @@
 import React from 'react'
 import { Container, Row, Col } from 'reactstrap';
+import FiltersMenu from '../../components/filters';
 import Pagination from '../../components/pagination';
 import Catalogo from '../../components/catalogo';
 import Categories from '../../components/categories';
@@ -27,6 +28,7 @@ const SearchPage = () => {
                         </div>
                     </Col>
                 </Row>
+                <FiltersMenu />
                 <div className="content-pagination">
                     <Pagination />
                 </div>

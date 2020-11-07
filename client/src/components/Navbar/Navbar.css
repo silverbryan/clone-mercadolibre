@@ -1,6 +1,5 @@
 .navbar-principal {
-    background: rgb(71,164,159);
-    background: linear-gradient(90deg, rgba(71,164,159,0.7987394787016369) 51%, rgba(21,68,67,1) 51%, rgba(71,164,159,0.8043417195979954) 51%);
+    background-color: #FFF159;
     display: flex !important;
     justify-content: center;
     align-items: center;
