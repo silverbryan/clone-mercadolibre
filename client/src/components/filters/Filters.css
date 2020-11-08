@@ -1,5 +1,28 @@
 .filters__menu {
+    background-color: #fff;
+    width: 100%;
     position: fixed;
-    top: 30px;
-    right: 0;
+    top: 6rem;
+    left: 0;
+    z-index: 9;
+    border-bottom: .5px solid #f1f1f1;
 }
+
+.filter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem;
+}
+
+.filter__icon {
+    font-size: 1.5rem;
+    color: #66A1FB;
+    padding: 5px;
+}
+
+.filter__name {
+    font-family: 'Poppins', sans-serif;
+    color: #154443;
+}
+

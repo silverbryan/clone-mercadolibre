@@ -1,6 +1,6 @@
 import {
     SEARCH_BY_QUERY,
-    SEARCH_BY_CATEGORY, SEARCH_IN_CACHE
+    SEARCH_BY_CATEGORY, SEARCH_IN_CACHE, FILTER_PRICE
 } from '../constants';
 
 const initialState = {
@@ -39,6 +39,13 @@ function searchReducers(state = initialState, action) {
                     currentSearchTerm: action.payload.key,
                     searchResults: action.payload.value,
                 },
+            }
+        case FILTER_PRICE:
+            return {
+                ...state,
+                recentResults: {
+                    searchResults: state.recentResults.searchResults.filter(result => result.price < action.payload),
+                }
             }
         default:
             return state;

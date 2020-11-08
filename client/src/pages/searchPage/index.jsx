@@ -12,6 +12,7 @@ const SearchPage = () => {
     return (
         <div className="homePage">
             <Container fluid={true} style={{ marginTop: '6rem' }}>
+                <FiltersMenu />
                 <Row>
                     <Col lg="2">
                         <div className="categories__principal mt-5">
@@ -21,14 +22,13 @@ const SearchPage = () => {
                         </div>
                     </Col>
                     <Col lg="10">
-                        <div className="catalogo mt-5">
+                        <div className="catalogo">
                             <Catalogo
                                 products={products}
                             />
                         </div>
                     </Col>
                 </Row>
-                <FiltersMenu />
                 <div className="content-pagination">
                     <Pagination />
                 </div>

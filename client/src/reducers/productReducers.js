@@ -7,7 +7,6 @@ const initialState = {
 }
 
 function productReducers(state = initialState, action) {
-    console.log(action);
     switch (action.type) {
         case GET_CATEGORIES:
             return {
