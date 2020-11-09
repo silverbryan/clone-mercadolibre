@@ -23,9 +23,7 @@ const SearchPage = () => {
                     </Col>
                     <Col lg="10">
                         <div className="catalogo">
-                            <Catalogo
-                                products={products}
-                            />
+                            <Catalogo products={products} />
                         </div>
                     </Col>
                 </Row>

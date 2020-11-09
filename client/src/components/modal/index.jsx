@@ -1,7 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { toggleModal } from '../../actions/applicationPropertiesActions';
+import {
+    toggleModal,
+    filterByRegularPrice,
+    filterByMediumPrice,
+    filterLowPrice,
+    filterHighPrice,
+    filterByNew,
+    filterByUsed
+} from '../../actions/applicationPropertiesActions';
+import { PRECIO_MEDIO, PRECIO_REGULAR, FILTER_LOW_PRICE, FILTER_HIGH_PRICE, FILTER_NEW, FILTER_USED } from '../../constants';
 import './Modal.css';
 
 const Modal = () => {
@@ -11,7 +20,12 @@ const Modal = () => {
     const { type, name, children } = useSelector(state => state.appProperties.modalContent);
 
     const handleOnClick = item => {
-
+        if (item === PRECIO_MEDIO) dispatch(filterByMediumPrice());
+        if (item === PRECIO_REGULAR) dispatch(filterByRegularPrice());
+        if (item === FILTER_LOW_PRICE) dispatch(filterLowPrice());
+        if (item === FILTER_HIGH_PRICE) dispatch(filterHighPrice());
+        if (item === FILTER_NEW) dispatch(filterByNew());
+        if (item === FILTER_USED) dispatch(filterByUsed());
         dispatch(toggleModal());
     }
 
@@ -35,7 +49,7 @@ const Modal = () => {
             <div className="modal__content">
                 <ul className="modal__items">
                     {children.map(item =>
-                        <Link to="/search#filter" key={item.id} onClick={() => handleOnClick(item.id)}>
+                        <Link to="/search#filters" key={item.id} onClick={() => handleOnClick(item.id)}>
                             <li className="modal__link">{item.name}</li>
                         </Link>
                     )}

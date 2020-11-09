@@ -10,6 +10,7 @@ import {
     FILTER_NEW,
     FILTER_USED,
     FILTER_PRICE,
+    FILTER_CONDITION,
 } from '../constants';
 
 export const toggleNavbarMenu = () => {
@@ -36,7 +37,7 @@ export const setModalPrice = () => {
                     name: 'Hasta $3000'
                 }, {
                     id: PRECIO_REGULAR,
-                    name: 'Mas de $5000'
+                    name: 'Hasta $5000'
                 }, {
                     id: FILTER_LOW_PRICE,
                     name: 'Precio Mas Bajo',
@@ -66,16 +67,21 @@ export const setModalCondition = () => {
     }
 }
 
-export const filterByPrice = () => {
-    return {
-        type: FILTER_PRICE,
-        payload: PRECIO_REGULAR,
-    }
+export const filterByRegularPrice = () => {
+    return { type: FILTER_PRICE, payload: PRECIO_REGULAR }
 }
-
 export const filterByMediumPrice = () => {
-    return {
-        type: FILTER_PRICE,
-        payload: PRECIO_MEDIO,
-    }
+    return { type: FILTER_PRICE, payload: PRECIO_MEDIO }
+}
+export const filterLowPrice = () => {
+    return { type: FILTER_LOW_PRICE }
+}
+export const filterHighPrice = () => {
+    return { type: FILTER_HIGH_PRICE }
+}
+export const filterByNew = () => {
+    return { type: FILTER_CONDITION, payload: FILTER_NEW }
+}
+export const filterByUsed = () => {
+    return { type: FILTER_CONDITION, payload: FILTER_USED }
 }
