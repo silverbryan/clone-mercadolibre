@@ -22,7 +22,6 @@ const Catalogo = ({ products }) => {
                 )}
             </Row>
         </Container>
-
     );
 }
 

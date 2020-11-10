@@ -1,7 +1,8 @@
 import React from 'react';
 import { Pagination, PaginationItem, PaginationLink } from 'reactstrap';
 import { useDispatch, useSelector } from 'react-redux';
-import { searchByQuery } from '../../actions/searchActions';
+import { search } from '../../actions/searchActions';
+import { SEARCH_BY_QUERY } from '../../constants';
 import './Pagination.css';
 
 const PaginationComponent = ({ maxElements }) => {
@@ -11,7 +12,7 @@ const PaginationComponent = ({ maxElements }) => {
 
     const handleOnClick = event => {
         const page = event.target.innerText;
-        dispatch(searchByQuery(cache, currentSearchTerm, page));
+        dispatch(search(currentSearchTerm, page, SEARCH_BY_QUERY));
     }
 
     return (

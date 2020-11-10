@@ -1,21 +1,22 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { searchByCategory } from '../../actions/searchActions';
+import { search } from '../../actions/searchActions';
 import { toggleNavbarMenu } from '../../actions/applicationPropertiesActions';
 import { useDispatch } from 'react-redux';
-
+import { SEARCH_BY_CATEGORY } from '../../constants';
 import './Categories.css';
 
 const Categories = ({ categories }) => {
     const dispatch = useDispatch();
     const handleOnClick = (id) => {
-        dispatch(searchByCategory(id, 1));
+        dispatch(search(id, 1, SEARCH_BY_CATEGORY));
         dispatch(toggleNavbarMenu());
     }
     return (
         <ul className="categories">
             {categories.map(category =>
                 <Link
+                    className="category__link"
                     to={"/search?cat=" + category.name}
                     onClick={() => handleOnClick(category.id)}
                     key={category.id}

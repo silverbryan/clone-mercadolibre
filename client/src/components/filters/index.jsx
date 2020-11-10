@@ -20,7 +20,7 @@ const Filters = () => {
         <div className="filters__menu">
             <Row>
                 <Col xs="6" lg="6">
-                    <Link to="/search#filter" onClick={() => handleOnClick(MODAL_PRICE)}>
+                    <Link className="filter-link" to="/search#filter" onClick={() => handleOnClick(MODAL_PRICE)}>
                         <div className="filter">
                             <div className="filter__icon">
                                 <svg width="1em" height="1em" viewBox="0 0 16 16" className="bi bi-arrow-down-up" fillRule="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -32,7 +32,7 @@ const Filters = () => {
                     </Link>
                 </Col>
                 <Col xs="6" lg="6">
-                    <Link to="/search#filter" onClick={() => handleOnClick(MODAL_CONDITION)}>
+                    <Link className="filter-link" to="/search#filter" onClick={() => handleOnClick(MODAL_CONDITION)}>
                         <div className="filter">
                             <div className="filter__icon">
                                 <svg width="1em" height="1em" viewBox="0 0 16 16" className="bi bi-list-ul" fillRule="currentColor" xmlns="http://www.w3.org/2000/svg">

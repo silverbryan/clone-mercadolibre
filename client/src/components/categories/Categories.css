@@ -4,12 +4,24 @@
     padding: 0;
 }
 
+.categories__principal {
+    display: none;
+    margin-top: 3rem;
+}
+
+.category__link {
+    outline: 0;
+    color: #154443;
+    text-decoration: none !important;
+}
+
 .category__item {
     padding: 5px;
     margin-bottom: 1rem;
 }
 .category__item:hover {
     background-color: #fff;
+    color: #154443;
     border-radius: 15px;
 }
 

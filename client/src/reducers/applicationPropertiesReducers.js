@@ -3,11 +3,13 @@ import {
     TOGGLE_MODAL,
     MODAL_CONDITION,
     MODAL_PRICE,
+    LOADING,
 } from '../constants';
 
 const initialState = {
     toggleNavbar: false,
     toggleModal: false,
+    isLoading: true,
     modalContent: {
         name: '',
         children: []
@@ -15,8 +17,6 @@ const initialState = {
 }
 
 function applicationPropertiesReducers(state = initialState, action) {
-    console.log(state);
-    console.log(action);
     switch (action.type) {
         case TOGGLE_NAVBAR_MENU:
             return {
@@ -37,6 +37,11 @@ function applicationPropertiesReducers(state = initialState, action) {
             return {
                 ...state,
                 modalContent: action.payload,
+            }
+        case LOADING:
+            return {
+                ...state,
+                isLoading: action.payload,
             }
         default:
             return state;

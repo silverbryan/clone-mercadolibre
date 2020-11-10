@@ -3,44 +3,32 @@ import {
     SEARCH_BY_QUERY,
     SEARCH_BY_CATEGORY,
     SEARCH_IN_CACHE,
+    LOADING,
 } from '../constants';
+import { useSelector } from 'react-redux';
+const API_URL = 'http://localhost:3001/api';
 
-export const searchByQuery = (cache, query, page) => (dispatch) => {
-    let status = false;
-    cache.map(search => {
-        if (search.key === query) {
-            dispatch({
-                type: SEARCH_IN_CACHE,
-                payload: search,
-            })
-            status = true;
-            return;
+export const search = (query, page, type) => {
+    let request = '';
+    if (type === SEARCH_BY_CATEGORY) request = axios.get(API_URL + '/search?category=' + query + '&page=' + page);
+    if (type === SEARCH_BY_QUERY) request = axios.get(API_URL + '/search?q=' + query + '&page=' + page);
+
+    return async dispatch => {
+        function setLoading(status) {
+            dispatch({ type: LOADING, payload: status })
         }
-    })
-    if (!status) {
-        axios.get('http://localhost:3001/api/search?q=' + query + '&page=' + page)
-            .then((res) => {
-                dispatch({
-                    type: SEARCH_BY_QUERY,
-                    payload: {
-                        currentSearchTerm: query,
-                        searchResults: res.data.results
-                    }
-                });
-            }).catch((err) => console.log(err))
-    }
-
-};
-
-export const searchByCategory = (id, page) => dispatch => {
-    axios.get('http://localhost:3001/api/search?category=' + id + '&page=' + page)
-        .then(res => {
+        function success(data) {
             dispatch({
-                type: SEARCH_BY_CATEGORY,
+                type,
                 payload: {
-                    currentSearchTerm: id,
-                    searchResults: res.data.results,
+                    currentSearchTerm: query,
+                    searchResults: data.results,
                 }
             })
-        })
+        }
+        setLoading(true);
+        const response = await request;
+        success(response.data);
+        setLoading(false);
+    }
 }

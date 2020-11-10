@@ -8,6 +8,11 @@
     border-bottom: .5px solid #f1f1f1;
 }
 
+.filter-link {
+    outline: 0;
+    text-decoration: none !important;
+}
+
 .filter {
     display: flex;
     justify-content: center;

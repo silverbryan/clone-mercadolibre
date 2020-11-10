@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom'
-import { searchByQuery } from '../../../actions/searchActions';
-
+import { search } from '../../../actions/searchActions';
+import { SEARCH_BY_QUERY } from '../../../constants';
 import './SearchBar.css';
 
 const SearchBar = () => {
@@ -27,7 +27,7 @@ const SearchBar = () => {
             onSubmit={event => {
                 event.preventDefault();
                 if (searchTerm !== '') {
-                    dispatch(searchByQuery(cache, searchTerm, 1));
+                    dispatch(search(searchTerm, 1, SEARCH_BY_QUERY));
                     routeChange();
                 }
             }}
