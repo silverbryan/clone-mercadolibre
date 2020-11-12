@@ -21,14 +21,14 @@ const HomePage = () => {
         <div className="homePage">
             <Container fluid={true} style={{ marginTop: '6rem' }}>
                 <Row>
-                    <Col lg="2">
+                    <Col lg="3">
                         <div className="categories__principal mt-5">
                             <Categories
                                 categories={categories}
                             />
                         </div>
                     </Col>
-                    <Col lg="10">
+                    <Col lg="9">
                         {/* <div className="catalogo mt-5">
                             <Catalogo
                                 products={products}

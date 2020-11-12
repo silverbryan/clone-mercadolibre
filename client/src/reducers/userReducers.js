@@ -15,6 +15,8 @@ const initialState = {
 }
 
 function searchReducers(state = initialState, action) {
+    console.log(action);
+    console.log(state);
     switch (action.type) {
         case SEARCH_BY_QUERY:
             return {

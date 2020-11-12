@@ -4,9 +4,12 @@ import FiltersMenu from '../../components/filters';
 import Pagination from '../../components/pagination';
 import Catalogo from '../../components/catalogo';
 import Categories from '../../components/categories';
-import Skeleton from 'react-loading-skeleton';
-import { useSelector } from 'react-redux'
+import principalFilters from '../../components/principalFilters';
 import SkeletonProducts from '../../components/skeletons/skeletonProducts';
+import { useSelector } from 'react-redux'
+import PrincipalFilters from '../../components/principalFilters';
+
+
 const SearchPage = () => {
     const products = useSelector(state => state.user.recentResults.searchResults);
     const categories = useSelector(state => state.products.categories);
@@ -24,9 +27,7 @@ const SearchPage = () => {
                         </div>
                     </Col>
                     <Col lg="9">
-                        <div className="filters__principal">
-
-                        </div>
+                        <PrincipalFilters />
                         <div className="catalogo">
                             {isLoading ? <SkeletonProducts /> : <Catalogo products={products} />}
                         </div>
