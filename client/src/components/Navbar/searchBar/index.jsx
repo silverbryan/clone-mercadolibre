@@ -27,7 +27,7 @@ const SearchBar = () => {
             onSubmit={event => {
                 event.preventDefault();
                 if (searchTerm !== '') {
-                    dispatch(search(searchTerm, 1, SEARCH_BY_QUERY));
+                    dispatch(search(searchTerm, 0, SEARCH_BY_QUERY));
                     routeChange();
                 }
             }}

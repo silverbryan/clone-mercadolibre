@@ -32,9 +32,7 @@ const SearchPage = () => {
                         </div>
                     </Col>
                 </Row>
-                <div className="content-pagination">
-                    <Pagination />
-                </div>
+                <Pagination />
             </Container>
         </div>
     );

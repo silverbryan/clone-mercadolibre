@@ -1,6 +1,6 @@
 .filters-principal {
     padding: 2rem 1rem;
-    display: flex;
+    display: none;
     justify-content: flex-start
 }
 

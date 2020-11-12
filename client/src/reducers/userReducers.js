@@ -1,7 +1,5 @@
 import {
-    SEARCH_BY_QUERY,
-    SEARCH_BY_CATEGORY,
-    SEARCH_IN_CACHE,
+    SEARCH,
     FILTER_PRICE,
     FILTER_LOW_PRICE,
     FILTER_HIGH_PRICE,
@@ -9,45 +7,22 @@ import {
 } from '../constants';
 
 const initialState = {
-    recentResults: { currentSearchTerm: '', searchResults: [] },
-    searchTerms: [],
+    recentResults: {
+        currentSearchTerm: '',
+        currentSearchType: '',
+        currentPage: 0,
+        searchResults: []
+    },
     results: [],
 }
 
 function searchReducers(state = initialState, action) {
-    console.log(action);
-    console.log(state);
     switch (action.type) {
-        case SEARCH_BY_QUERY:
+        case SEARCH:
             return {
                 ...state,
                 recentResults: action.payload,
-                searchTerms: [...state.searchTerms,
-                {
-                    key: action.payload.currentSearchTerm,
-                    value: action.payload.searchResults
-                }],
                 results: action.payload.searchResults,
-            }
-        case SEARCH_BY_CATEGORY:
-            return {
-                ...state,
-                recentResults: action.payload,
-                searchTerms: [...state.searchTerms,
-                {
-                    key: action.payload.currentSearchTerm,
-                    value: action.payload.searchResults
-                }
-                ],
-                results: action.payload.searchResults,
-            }
-        case SEARCH_IN_CACHE:
-            return {
-                ...state,
-                recentResults: {
-                    currentSearchTerm: action.payload.key,
-                    searchResults: action.payload.value,
-                },
             }
         case FILTER_PRICE:
             return {

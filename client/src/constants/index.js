@@ -1,4 +1,5 @@
 //searchs
+export const SEARCH = "SEARCH";
 export const SEARCH_BY_QUERY = "SEARCH_BY_QUERY";
 export const SEARCH_ALL = "SEARCH__ALL";
 export const SEARCH_BY_CATEGORY = "SEARCH_BY_CATEGORY";
@@ -22,3 +23,5 @@ export const LOADING = "LOADING";
 export const LOADING_CATEGORIES = 'LOADING_CATEGORIES';
 export const PRECIO_MEDIO = 3000;
 export const PRECIO_REGULAR = 5000;
+export const INCREMENT = "INCREMENT";
+export const DECREMENT = "DECREMENT";

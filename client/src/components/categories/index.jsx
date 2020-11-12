@@ -10,7 +10,7 @@ import './Categories.css';
 const Categories = ({ categories }) => {
     const dispatch = useDispatch();
     const handleOnClick = (id) => {
-        dispatch(search(id, 1, SEARCH_BY_CATEGORY));
+        dispatch(search(id, 0, SEARCH_BY_CATEGORY));
         dispatch(toggleNavbarMenu());
     }
     return (

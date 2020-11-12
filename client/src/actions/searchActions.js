@@ -1,5 +1,6 @@
 import axios from 'axios';
 import {
+    SEARCH,
     SEARCH_BY_QUERY,
     SEARCH_BY_CATEGORY,
     LOADING,
@@ -18,9 +19,11 @@ export const search = (query, page, type) => {
         }
         function success(data) {
             dispatch({
-                type,
+                type: SEARCH,
                 payload: {
                     currentSearchTerm: query,
+                    currentSearchType: type,
+                    currentPage: page,
                     searchResults: data.results,
                 }
             })

@@ -21,6 +21,12 @@
     .filters__menu {
         display: none;
     }
+    .filters-principal {
+        display: flex;
+    }
+    .catalogo {
+        margin-top: 0;
+    }
     .categories__principal {
         display: block;
     }

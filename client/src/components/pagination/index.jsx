@@ -2,60 +2,36 @@ import React from 'react';
 import { Pagination, PaginationItem, PaginationLink } from 'reactstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import { search } from '../../actions/searchActions';
-import { SEARCH_BY_QUERY } from '../../constants';
+import { INCREMENT, DECREMENT } from '../../constants';
 import './Pagination.css';
 
-const PaginationComponent = ({ maxElements }) => {
+const PaginationComponent = () => {
     const dispatch = useDispatch();
-    const currentSearchTerm = useSelector(state => state.user.recentResults.currentSearchTerm);
-    const cache = useSelector(state => state.user.searchTerms);
+    const { currentSearchTerm, currentSearchType, currentPage } = useSelector(state => state.user.recentResults);
 
-    const handleOnClick = event => {
-        const page = event.target.innerText;
-        dispatch(search(currentSearchTerm, page, SEARCH_BY_QUERY));
+    const handleOnClick = type => {
+        let page;
+        if (type === DECREMENT && currentPage > 0) {
+            page = currentPage - 1;
+            dispatch(search(currentSearchTerm, page, currentSearchType));
+        }
+        if (type === INCREMENT) {
+            page = currentPage + 1;
+            dispatch(search(currentSearchTerm, page, currentSearchType));
+        }
     }
 
     return (
-        <footer>
+        <div>
             <Pagination aria-label="Page navigation example">
                 <PaginationItem>
-                    <PaginationLink first onClick={handleOnClick} />
+                    <PaginationLink onClick={() => handleOnClick(DECREMENT)}>Anterior</PaginationLink>
                 </PaginationItem>
                 <PaginationItem>
-                    <PaginationLink onClick={handleOnClick}>
-                        1
-                </PaginationLink>
-                </PaginationItem>
-                <PaginationItem>
-                    <PaginationLink onClick={handleOnClick}>
-                        2
-                </PaginationLink>
-                </PaginationItem>
-                <PaginationItem>
-                    <PaginationLink onClick={handleOnClick}>
-                        3
-                </PaginationLink>
-                </PaginationItem>
-                <PaginationItem>
-                    <PaginationLink onClick={handleOnClick}>
-                        4
-                </PaginationLink>
-                </PaginationItem>
-                <PaginationItem>
-                    <PaginationLink onClick={handleOnClick}>
-                        5
-                </PaginationLink>
-                </PaginationItem>
-                <PaginationItem>
-                    <PaginationLink onClick={handleOnClick} >
-                        6
-                </PaginationLink>
-                </PaginationItem>
-                <PaginationItem>
-                    <PaginationLink last onClick={handleOnClick} />
+                    <PaginationLink onClick={() => handleOnClick(INCREMENT)}>Siguiente</PaginationLink>
                 </PaginationItem>
             </Pagination>
-        </footer>
+        </div>
 
     );
 }
