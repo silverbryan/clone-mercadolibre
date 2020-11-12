@@ -1,7 +1,7 @@
 .filters-principal {
     padding: 2rem 1rem;
     display: flex;
-    justify-content: start;
+    justify-content: flex-start
 }
 
 .filter-select {

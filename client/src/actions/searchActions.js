@@ -2,10 +2,9 @@ import axios from 'axios';
 import {
     SEARCH_BY_QUERY,
     SEARCH_BY_CATEGORY,
-    SEARCH_IN_CACHE,
     LOADING,
 } from '../constants';
-import { useSelector } from 'react-redux';
+
 const API_URL = 'http://localhost:3001/api';
 
 export const search = (query, page, type) => {

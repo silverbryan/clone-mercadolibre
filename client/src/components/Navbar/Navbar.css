@@ -1,7 +1,7 @@
 .navbar-principal {
     background-color: #FFF159;
     display: flex !important;
-    justify-content: end;
+    justify-content: flex-end;
     align-items: center;
     height: 6rem;
     padding: 0 20px;

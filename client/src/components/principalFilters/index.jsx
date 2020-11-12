@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { FILTER_LOW_PRICE, FILTER_HIGH_PRICE, FILTER_NEW, FILTER_USED } from '../../constants';
@@ -20,7 +20,7 @@ const PrincipalFilters = () => {
     return (
         <div className="filters-principal">
             <div className="filter-container">
-                <label className="filter-select-title">Filtrar Por</label>
+                <label className="filter-select-title">Filtrar Por:</label>
                 <select className="filter-select" name="select-condition" id="select-condition">
                     <option selected value="Seleccionar">Seleccione</option>
                     <option value={FILTER_NEW} onClick={handleOnClick}>Nuevo</option>

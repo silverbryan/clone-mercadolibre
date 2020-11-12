@@ -4,12 +4,14 @@ import {
     MODAL_CONDITION,
     MODAL_PRICE,
     LOADING,
+    LOADING_CATEGORIES,
 } from '../constants';
 
 const initialState = {
     toggleNavbar: false,
     toggleModal: false,
     isLoading: true,
+    isLoadingCategories: true,
     modalContent: {
         name: '',
         children: []
@@ -42,6 +44,11 @@ function applicationPropertiesReducers(state = initialState, action) {
             return {
                 ...state,
                 isLoading: action.payload,
+            }
+        case LOADING_CATEGORIES:
+            return {
+                ...state,
+                isLoadingCategories: action.payload,
             }
         default:
             return state;

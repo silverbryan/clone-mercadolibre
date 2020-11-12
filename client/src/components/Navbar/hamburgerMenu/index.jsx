@@ -2,6 +2,7 @@ import React from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import Categories from '../../categories';
+import SkeletonCategories from '../../skeletons/skeletonCategories';
 import { toggleNavbarMenu } from '../../../actions/applicationPropertiesActions';
 
 import './HamburgerMenu.css';
@@ -11,6 +12,8 @@ const HamburgerMenu = () => {
     const dispatch = useDispatch();
     const categories = useSelector(state => state.products.categories);
     const toggleNavbar = useSelector(state => state.appProperties.toggleNavbar);
+    const isLoadingCategories = useSelector(state => state.appProperties.isLoadingCategories);
+
     const handleOnClick = event => {
         dispatch(toggleNavbarMenu());
     }
@@ -30,9 +33,7 @@ const HamburgerMenu = () => {
                 Categorias
             </div>
             <div className="categories__menu">
-                <Categories
-                    categories={categories}
-                />
+                {isLoadingCategories ? <SkeletonCategories /> : <Categories categories={categories} />}
             </div>
         </nav>
     );

@@ -19,5 +19,6 @@ export const FILTER_USED = "used";
 export const TOGGLE_NAVBAR_MENU = "TOGLE_NAVBAR_MENU";
 export const TOGGLE_MODAL = "TOGGLE_MODAL";
 export const LOADING = "LOADING";
+export const LOADING_CATEGORIES = 'LOADING_CATEGORIES';
 export const PRECIO_MEDIO = 3000;
 export const PRECIO_REGULAR = 5000;
