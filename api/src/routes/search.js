@@ -52,7 +52,7 @@ server.get('/categorys', async (req, res) => {
     allPromises.map(promise => arrResults.push({
         id: promise.data.id,
         name: promise.data.name,
-        image: promise.data.picture,
+        image: promise.data.picture.replace('http', 'https'),
     }))
     res.status(200).json({ results: arrResults })
 })
