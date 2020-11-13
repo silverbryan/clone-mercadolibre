@@ -1,7 +1,8 @@
 const axios = require('axios');
 const server = require("express").Router();
 
-const PATH_BASE = process.env.PATH_BASE;
+// const PATH_BASE = process.env.PATH_BASE;
+const PATH_BASE = 'api.mercadolibre.com';
 
 server.get('/', (req, res) => {
     const searchTerm = req.query.q;
