@@ -1,0 +1,23 @@
+{
+  "name": "clone-mercadolibre",
+  "version": "1.0.0",
+  "main": "api/index.js",
+  "repository": {},
+  "license": "MIT",
+  "homepage": "",
+  "engines": {
+    "node": "6.9.1"
+  },
+  "dependencies": {
+    "concurrently": "^4.0.1",
+    "rimraf": "^2.6.2"
+  },
+  "scripts": {
+    "build": "concurrently \"cd client && npm run build\" \"cd api && npm run build\"",
+    "clean": "concurrently \"rimraf node_modules\" \"cd client && rimraf node_modules build\" \"cd api && rimraf node_modules build\"",
+    "heroku-postbuild": "npm run build",
+    "install": "(cd client && npm install) && (cd api && npm install)",
+    "start": "concurrently \"cd client && PORT=3000 npm run start\" \"cd api && PORT=3001 npm run start\"",
+    "start:prod": "cd api && npm run start:prod"
+  }
+}

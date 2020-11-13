@@ -1,8 +1,7 @@
-require('dotenv').config();
 const axios = require('axios');
 const server = require("express").Router();
 
-const { PATH_BASE } = process.env;
+const PATH_BASE = process.env.PATH_BASE;
 
 server.get('/', (req, res) => {
     const searchTerm = req.query.q;
