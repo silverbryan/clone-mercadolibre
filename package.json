@@ -18,7 +18,7 @@
     "clean": "concurrently \"rimraf node_modules\" \"cd client && rimraf node_modules build\" \"cd api && rimraf node_modules build\"",
     "heroku-postbuild": "npm run build",
     "install": "(cd client && npm install) && (cd api && npm install)",
-    "start": "concurrently \"cd client && PORT=3000 npm run start\" \"cd api && PORT=3001 npm run start\"",
+    "start": "concurrently \"cd client && npm run start\" \"cd api && npm run start\"",
     "start:prod": "cd api && npm run start:prod"
   }
 }
