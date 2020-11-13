@@ -6,7 +6,7 @@ import {
 } from '../constants';
 
 export const getCategories = () => {
-    let request = axios.get('/search/categorys');
+    let request = axios.get('/api/search/categorys');
 
     return async dispatch => {
         function setLoading(status) {
