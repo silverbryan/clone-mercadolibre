@@ -6,12 +6,10 @@ import {
     LOADING,
 } from '../constants';
 
-const API_URL = 'http://localhost:3001/api';
-
 export const search = (query, page, type) => {
     let request = '';
-    if (type === SEARCH_BY_CATEGORY) request = axios.get(API_URL + '/search?category=' + query + '&page=' + page);
-    if (type === SEARCH_BY_QUERY) request = axios.get(API_URL + '/search?q=' + query + '&page=' + page);
+    if (type === SEARCH_BY_CATEGORY) request = axios.get('/api/search?category=' + query + '&page=' + page);
+    if (type === SEARCH_BY_QUERY) request = axios.get('/api/search?q=' + query + '&page=' + page);
 
     return async dispatch => {
         function setLoading(status) {

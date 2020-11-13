@@ -1,8 +1,7 @@
-require('dotenv').config();
 const axios = require('axios');
 const server = require("express").Router();
 
-const { PATH_BASE } = process.env;
+const PATH_BASE = process.env.PATH_BASE;
 
 server.get('/', (req, res) => {
     const searchTerm = req.query.q;
@@ -29,7 +28,7 @@ server.get('/', (req, res) => {
                         price: result.price,
                         currency_id: result.currency_id,
                         available_quantity: result.available_quantity,
-                        thumbnail: result.thumbnail.replace("-I", "-O"),
+                        thumbnail: result.thumbnail.replace('http', 'https').replace("-I", "-O"),
                         condition: result.condition,
                     }
                 )
@@ -53,7 +52,7 @@ server.get('/categorys', async (req, res) => {
     allPromises.map(promise => arrResults.push({
         id: promise.data.id,
         name: promise.data.name,
-        image: promise.data.picture,
+        image: promise.data.picture.replace('http', 'https'),
     }))
     res.status(200).json({ results: arrResults })
 })

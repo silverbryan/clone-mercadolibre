@@ -22,7 +22,7 @@ const PrincipalFilters = () => {
             <div className="filter-container">
                 <label className="filter-select-title">Filtrar Por:</label>
                 <select className="filter-select" name="select-condition" id="select-condition">
-                    <option selected value="Seleccionar">Seleccione</option>
+                    <option defaultValue="Seleccionar">Seleccione</option>
                     <option value={FILTER_NEW} onClick={handleOnClick}>Nuevo</option>
                     <option value={FILTER_USED} onClick={handleOnClick}>Usado</option>
                 </select>
