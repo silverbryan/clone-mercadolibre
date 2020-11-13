@@ -5,10 +5,8 @@ import {
     LOADING_CATEGORIES,
 } from '../constants';
 
-const API_URL = 'http://localhost:3001/api';
-
 export const getCategories = () => {
-    let request = axios.get(API_URL + '/search/categorys');
+    let request = axios.get('/search/categorys');
 
     return async dispatch => {
         function setLoading(status) {
