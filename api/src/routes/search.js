@@ -28,7 +28,7 @@ server.get('/', (req, res) => {
                         price: result.price,
                         currency_id: result.currency_id,
                         available_quantity: result.available_quantity,
-                        thumbnail: result.thumbnail.replace("-I", "-O"),
+                        thumbnail: result.thumbnail.replace('http', 'https').replace("-I", "-O"),
                         condition: result.condition,
                     }
                 )
