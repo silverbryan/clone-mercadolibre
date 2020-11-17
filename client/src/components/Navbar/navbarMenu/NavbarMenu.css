@@ -27,4 +27,5 @@
 
 .categories__menu {
   padding: 0 2rem;
+  overflow-y: auto;
 }
