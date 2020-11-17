@@ -18,6 +18,9 @@
     .navbar-menu {
         display: none;
     }
+    .hamburger-menu {
+        display: none;
+    }
     .filters__menu {
         display: none;
     }
