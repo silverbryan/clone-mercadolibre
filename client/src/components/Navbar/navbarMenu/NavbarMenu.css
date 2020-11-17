@@ -11,7 +11,7 @@
 }
 
 .navbar-menu-header {
-  height: 6rem;
+  padding: 2rem 0;
   display: flex;
   justify-content: center;
   align-items: center;
