@@ -11,16 +11,9 @@
     background-color: transparent;
     color: #424242;
     border: none;
+    outline: none;
     width: 70%;
     
-}
-
-.searchBar__input:focus {
-    border: none;
-}
-
-.searBar__input:active {
-    border: none;
 }
 
 .searchBar__button {
