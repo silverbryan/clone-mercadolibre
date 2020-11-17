@@ -12,6 +12,15 @@
     color: #424242;
     border: none;
     width: 90%;
+    
+}
+
+.searchBar__input:focus {
+    border: none;
+}
+
+.searBar__input:active {
+    border: none;
 }
 
 .searchBar__button {
