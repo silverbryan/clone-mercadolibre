@@ -30,12 +30,25 @@ const HomePage = () => {
                         </div>
                     </Col>
                     <Col lg="9">
-                        {/* <div className="catalogo">
-                            {isLoading ? <SkeletonProducts /> : <Catalogo products={products} />}
-                        </div> */}
+                        <ProductsHome
+                            categories={categories}
+                        />
                     </Col>
                 </Row>
             </Container>
+        </div>
+    );
+}
+
+const ProductsHome = ({ categories }) => {
+    const dispatch = useDispatch();
+
+    return (
+        <div className="products__home">
+            {/* {categories.map(category => {
+                dispatch()
+            })} */}
+            hello
         </div>
     );
 }
