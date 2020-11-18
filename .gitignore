@@ -10,7 +10,7 @@ coverage
 build
 
 # misc
-.env
+*.env
 .DS_Store
 .yarnclean
 npm-debug.log
