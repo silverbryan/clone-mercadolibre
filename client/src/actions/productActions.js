@@ -24,3 +24,7 @@ export const getCategories = () => {
         setLoading(false);
     }
 }
+
+export const getProductsById = () => {
+    let
+}

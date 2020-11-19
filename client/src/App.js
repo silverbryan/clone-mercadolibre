@@ -5,6 +5,7 @@ import Navbar from './components/Navbar';
 //pages
 import HomePage from './pages/homePage';
 import SearchPage from './pages/searchPage';
+import ProductDetailPage from './pages/productDetailPage';
 
 import './App.css';
 
@@ -15,6 +16,7 @@ function App() {
       <Switch>
         <Route exact path="/" component={HomePage} />
         <Route exact path="/search" component={SearchPage} />
+        <Route exact path="/product/:id" component={ProductDetailPage} />
       </Switch>
     </div>
 

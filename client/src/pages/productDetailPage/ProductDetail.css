@@ -1,0 +1,46 @@
+.productDetail__payments {
+    display: flex;
+    align-items: center;
+    margin-top: 4px;
+    flex-wrap: wrap;
+}
+
+.ui-pdp-payments-sprites__icon-container {
+    margin-left: 0;
+}
+
+.ui-pdp-payments-sprites__icon {
+    margin-left: 0;
+}
+
+.payments-small {
+    background: url(https://http2.mlstatic.com/secure/payment-logos/v2/payment-logos-mla-small_v_b7642bed7b.png) no-repeat;
+}
+
+._visa-small {
+    width: 34px;
+    height: 11px;
+    background-position: left -427px;
+}
+
+._master-small {
+    width: 26px;
+    height: 20px;
+    background-position: left -1159px;
+}
+
+._cabal-small {
+    width: 56px;
+    height: 19px;
+    background-position: left -347px;
+}
+
+._amex-small {
+    width: 22px;
+    height: 19px;
+    background-position: left -20px;
+}
+
+.ui-pdp-media__figure {
+    margin-right: 10px;
+}
