@@ -1,9 +1,11 @@
 import {
     GET_CATEGORIES,
+    PRODUCT_DETAIL,
 } from '../constants';
 
 const initialState = {
-    categories: []
+    categories: [],
+    productDetail: {},
 }
 
 function productReducers(state = initialState, action) {
@@ -12,6 +14,11 @@ function productReducers(state = initialState, action) {
             return {
                 ...state,
                 categories: action.payload,
+            }
+        case PRODUCT_DETAIL:
+            return {
+                ...state,
+                productDetail: action.payload,
             }
         default:
             return state;

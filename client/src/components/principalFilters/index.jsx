@@ -30,7 +30,7 @@ const PrincipalFilters = () => {
             <div className="filter-container">
                 <label className="filter-select-title">Ordenar Por: </label>
                 <select className="filter-select" name="select-order" id="select-order">
-                    <option selected value="RELEVANTE">Mas Relevante</option>
+                    <option defaultValue="RELEVANTE">Mas Relevante</option>
                     <option value={FILTER_LOW_PRICE} onClick={handleOnClick}>Precio Mas Bajo</option>
                     <option value={FILTER_HIGH_PRICE} onClick={handleOnClick}>Precio Mas Alto</option>
                 </select>

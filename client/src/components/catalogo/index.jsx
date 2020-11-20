@@ -11,6 +11,7 @@ const Catalogo = ({ products }) => {
                     <Col lg="3" md="4" sm="6" key={product.id}>
                         <ProductCard
                             key={product.id}
+                            id={product.id}
                             title={product.title}
                             price={product.price}
                             currency_id={product.currency_id}

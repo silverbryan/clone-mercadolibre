@@ -3,36 +3,54 @@ import { Container, Row, Col } from 'reactstrap';
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { getProductById } from '../../actions/productActions';
+import Skeleton from 'react-loading-skeleton';
+import './ProductDetail.css';
 
 const ProductDetail = () => {
-    const { productId } = useParams();
+    const { id } = useParams();
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(getProductById(productId));
-    }, [productId]);
+        dispatch(getProductById(id));
+    }, [id]);
 
-    const product = useSelector(state => state.products.ProductDetail);
+    const isLoading = useSelector(state => state.appProperties.isLoading);
+    const product = useSelector(state => state.products.productDetail);
 
     return (
-        <Container fluid={true}>
+        <Container fluid={true} className="productDetail">
             <Row>
                 <Col lg="8">
-                    {product.image}
+                    <div className="productDetail__images">
+                        {isLoading ? <Skeleton height={300} />
+                            :
+                            <>
+                                <div className="images__small">
+                                    <ul className="box-images">
+                                        {product.images.map(image =>
+                                            <li className="item-image">
+                                                <img src={image.xs} alt={image.id} />
+                                            </li>
+                                        )}
+                                    </ul>
+                                </div>
+                                <div className="image-principal">
+                                    <img src={product.images[0].xl} className="img-fill" alt="loading..." />
+                                </div>
+                            </>
+                        }
+                    </div>
                 </Col>
                 <Col lg="4">
                     <div className="productDetail__content">
                         <div className="productDetail__subtitle">
-                            {product.subtitle}
+                            {product.condition + ' | ' + product.sold + ' vendidos'}
                         </div>
                         <div className="productDetail__title">
                             {product.title}
                         </div>
-                        <div className="productDetail__starRating">
-                            {product.stars}
-                        </div>
                         <div className="productDetail__price">
-                            {product.price}
+                            {'$ ' + product.price}
                         </div>
                         <div className="generic-sumary">
                             <div className="generic-sumary-icon">
@@ -90,6 +108,13 @@ const ProductDetail = () => {
                                 </div>
                             </div>
                         </div>
+                        <form action="https://www.mi-sitio.com/procesar-pago" method="POST">
+                            <script
+                                src="https://www.mercadopago.com.ar/integrations/v1/web-tokenize-checkout.js"
+                                data-public-key="APP_USR-45333491-e3b1-4927-a91c-108c4e59631b"
+                                data-transaction-amount="100.00">
+                            </script>
+                        </form>
                     </div>
                 </Col>
             </Row >

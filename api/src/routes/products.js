@@ -23,7 +23,8 @@ server.get('/:id', (req, res) => {
                     images: response.data.pictures.map(picture => {
                         return {
                             id: picture.id,
-                            url: picture.secure_url.replace('-O', '-F')
+                            xl: picture.secure_url.replace('-O', '-F'),
+                            xs: picture.secure_url.replace('-O', '-R'),
                         }
                     }),
                 }
