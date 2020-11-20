@@ -18,7 +18,7 @@ const Categories = ({ categories }) => {
             {categories.map(category =>
                 category.name === '' && category.image === ''
                     ?
-                    <li className="category__item">
+                    <li className="category__item" key={category.id}>
                         <div className="category__content">
                             <Skeleton circle={true} height={30} width={30} />
                             <div className="category__title">

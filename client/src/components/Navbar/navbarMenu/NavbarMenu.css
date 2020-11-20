@@ -1,0 +1,31 @@
+.navbar-menu {
+    background-color: #F4FCFF;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+}
+
+.navbar-menu-header {
+  padding: 2rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.categorys-title {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  margin: 1rem 0;
+  text-align: center;
+}
+
+.categories__menu {
+  padding: 0 2rem;
+  overflow-y: auto;
+}

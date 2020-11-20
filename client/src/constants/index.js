@@ -6,6 +6,7 @@ export const SEARCH_BY_CATEGORY = "SEARCH_BY_CATEGORY";
 export const SEARCH_IN_CACHE = "SEARCH_IN_CACHE";
 //products
 export const GET_CATEGORIES = "GET_CATEGORIES";
+export const PRODUCT_DETAIL = "PRODUCT_DETAIL";
 //modal
 export const MODAL_PRICE = "MODAL_PRICE";
 export const MODAL_CONDITION = "MODAL_CONDITION";

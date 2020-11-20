@@ -8,8 +8,7 @@
 }
 
 .navbar__brand {
-    position: fixed;
-    top: 20px;
+    position: absolute;
     left: 20px;
     display: none;
 }

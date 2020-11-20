@@ -11,7 +11,9 @@
     background-color: transparent;
     color: #424242;
     border: none;
-    width: 90%;
+    outline: none;
+    width: 60%;
+    
 }
 
 .searchBar__button {

@@ -1,0 +1,125 @@
+.productDetail {
+    margin-top: 6rem;
+    background-color: #fff;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.productDetail__images {
+    display: flex;
+}
+
+.generic-sumary {
+    display: flex;
+    margin: 1rem 0;
+}
+
+.generic-sumary-icon {
+    width: 30px;
+}
+.generic-sumary-title {
+    font-size: 1.2rem;
+    padding: 1rem 0;
+}
+
+.generic-sumary-subtitle {
+    font-size: 1rem;
+    color: rgba(0,0,0,.45);
+}
+
+.ui-pdp-payment-sprites__icon-container {
+    margin-right: 7px;
+}
+
+.productDetail__content {
+    padding: 2rem 1rem;
+    margin: 2.5rem 0;
+    border: 1px solid rgba(0,0,0,.25);
+    border-radius: 6px;
+}
+
+.productDetail__title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-align: left;
+}
+
+.productDetail__subtitle {
+    font-size: 1.2rem;
+    color: rgba(0,0,0,.45);
+}
+
+.productDetail__price {
+    font-size: 2.7rem;
+    font-weight: 400;
+    padding: 1rem 0;
+}
+.box-images {
+    list-style: none;
+    padding: 2.5rem 0;
+}
+
+.image-principal {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 400px;
+    padding: 2rem 0;
+}
+
+.item-image {
+    border: 1px solid rgba(0,0,0,.25);
+    border-radius: 4px;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
+.item-image:hover {
+    border: 2px solid #3483fa;
+}
+.productDetail__payments {
+    display: flex;
+    align-items: center;
+    margin-top: 4px;
+    flex-wrap: wrap;
+}
+
+.ui-pdp-payments-sprites__icon-container {
+    margin-left: 0;
+}
+
+.ui-pdp-payments-sprites__icon {
+    margin-left: 0;
+}
+
+.payments-small {
+    background: url(https://http2.mlstatic.com/secure/payment-logos/v2/payment-logos-mla-small_v_b7642bed7b.png) no-repeat;
+}
+
+._visa-small {
+    width: 34px;
+    height: 11px;
+    background-position: left -427px;
+}
+
+._master-small {
+    width: 26px;
+    height: 20px;
+    background-position: left -1159px;
+}
+
+._cabal-small {
+    width: 56px;
+    height: 19px;
+    background-position: left -347px;
+}
+
+._amex-small {
+    width: 22px;
+    height: 19px;
+    background-position: left -20px;
+}
+
+.ui-pdp-media__figure {
+    margin-right: 10px;
+}

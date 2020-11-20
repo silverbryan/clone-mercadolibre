@@ -36,13 +36,12 @@
 .modal__name {
   font-family: 'Poppins', sans-serif;
   font-weight: 700;
-  font-size: 1.5rem;
-  margin: 1rem 0;
+  font-size: 1rem;
   text-align: center;
 }
 
 .modal__content {
-  padding: 2rem;
+  padding: 1rem;
 }
 
 .modal__items {
@@ -54,10 +53,10 @@
     width: 100%;
     background-color: #fff;
     margin-bottom: 1rem;
-    padding: 1.5rem 1rem;
+    padding: 1rem;
     border-radius: 10px;
     text-align: center;
-    font-size: 1.2rem;
+    font-size: 1rem;
     color: #154443;
     border: 1px solid #154443;
 }
