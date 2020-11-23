@@ -22,7 +22,7 @@ const ProductDetail = () => {
             <Row>
                 <Col lg="8">
                     <div className="productDetail__images">
-                        {isLoading ? <Skeleton height={300} />
+                        {/* {isLoading ? <Skeleton height={300} />
                             :
                             <>
                                 <div className="images__small">
@@ -38,7 +38,7 @@ const ProductDetail = () => {
                                     <img src={product.images[0].xl} className="img-fill" alt="loading..." />
                                 </div>
                             </>
-                        }
+                        } */}
                     </div>
                 </Col>
                 <Col lg="4">
@@ -108,13 +108,7 @@ const ProductDetail = () => {
                                 </div>
                             </div>
                         </div>
-                        <form action="https://www.mi-sitio.com/procesar-pago" method="POST">
-                            <script
-                                src="https://www.mercadopago.com.ar/integrations/v1/web-tokenize-checkout.js"
-                                data-public-key="APP_USR-45333491-e3b1-4927-a91c-108c4e59631b"
-                                data-transaction-amount="100.00">
-                            </script>
-                        </form>
+                        <button className="btn-buy" onClick={handleOnClick}>Comprar ahora</button>
                     </div>
                 </Col>
             </Row >
