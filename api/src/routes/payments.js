@@ -18,8 +18,11 @@ server.post('/new', async (req, res) => {
                     unit_price,
                 },
             ],
+            external_reference: {
+                id: 'clone-mercadolibre',
+            },
             back_urls: {
-                success: "https://clone-mercadolibre.herokuapp.com/payments/sucess",
+                success: "https://www.tu-sitio/success",
             },
             auto_return: "approved",
             payment_methods: {

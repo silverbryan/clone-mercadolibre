@@ -2,12 +2,13 @@ import React, { useEffect } from 'react'
 import { Container, Row, Col } from 'reactstrap';
 import { useParams, Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { getProductById, makePayment } from '../../actions/productActions';
+import { getProductById } from '../../actions/productActions';
 import Skeleton from 'react-loading-skeleton';
 import "react-image-gallery/styles/css/image-gallery.css";
 import ImageGallery from 'react-image-gallery';
 
 import './ProductDetail.css';
+import Axios from 'axios';
 
 const ProductDetail = () => {
     const { id } = useParams();
@@ -15,12 +16,21 @@ const ProductDetail = () => {
 
     useEffect(() => {
         dispatch(getProductById(id));
-        dispatch(makePayment(product));
     }, [id]);
+
+    const handleOnClick = async e => {
+        e.preventDefault();
+        const result = await Axios.post('/payments/new', {
+            title: product.name,
+            quantity: 1,
+            unit_price: product.price,
+        })
+        window.location.href = result.data.payment_link;
+
+    }
 
     const isLoading = useSelector(state => state.appProperties.isLoading);
     const product = useSelector(state => state.products.productDetail);
-    const paymentLink = useSelector(state => state.products.paymentLink);
 
     return (
         <Container fluid={true} className="productDetail">
@@ -110,7 +120,7 @@ const ProductDetail = () => {
                                 </div>
                             </div>
                         </div>
-                        <a href={paymentLink} className="btn-buy">Comprar ahora</a>
+                        <button onClick={handleOnClick} className="btn-buy">Comprar ahora</button>
                     </div>
                 </Col>
             </Row >
