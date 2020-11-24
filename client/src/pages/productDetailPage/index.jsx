@@ -1,9 +1,12 @@
 import React, { useEffect } from 'react'
 import { Container, Row, Col } from 'reactstrap';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { getProductById } from '../../actions/productActions';
+import { getProductById, makePayment } from '../../actions/productActions';
 import Skeleton from 'react-loading-skeleton';
+import "react-image-gallery/styles/css/image-gallery.css";
+import ImageGallery from 'react-image-gallery';
+
 import './ProductDetail.css';
 
 const ProductDetail = () => {
@@ -12,33 +15,32 @@ const ProductDetail = () => {
 
     useEffect(() => {
         dispatch(getProductById(id));
+        dispatch(makePayment(product));
     }, [id]);
 
     const isLoading = useSelector(state => state.appProperties.isLoading);
     const product = useSelector(state => state.products.productDetail);
+    const paymentLink = useSelector(state => state.products.paymentLink);
 
     return (
         <Container fluid={true} className="productDetail">
             <Row>
                 <Col lg="8">
                     <div className="productDetail__images">
-                        {/* {isLoading ? <Skeleton height={300} />
-                            :
-                            <>
-                                <div className="images__small">
-                                    <ul className="box-images">
-                                        {product.images.map(image =>
-                                            <li className="item-image">
-                                                <img src={image.xs} alt={image.id} />
-                                            </li>
-                                        )}
-                                    </ul>
-                                </div>
-                                <div className="image-principal">
-                                    <img src={product.images[0].xl} className="img-fill" alt="loading..." />
-                                </div>
-                            </>
-                        } */}
+                        {isLoading === false &&
+                            <ImageGallery
+                                items={product.images.map(image => {
+                                    return {
+                                        original: image.md,
+                                        thumbnail: image.xs,
+                                    }
+                                })}
+                                thumbnailPosition={"left"}
+                                showFullscreenButton={false}
+                                showPlayButton={false}
+                                showNav={false}
+                            />
+                        }
                     </div>
                 </Col>
                 <Col lg="4">
@@ -108,7 +110,7 @@ const ProductDetail = () => {
                                 </div>
                             </div>
                         </div>
-                        <button className="btn-buy" onClick={handleOnClick}>Comprar ahora</button>
+                        <a href={paymentLink} className="btn-buy">Comprar ahora</a>
                     </div>
                 </Col>
             </Row >

@@ -1,27 +1,25 @@
 require('dotenv').config();
 const axios = require('axios');
 const server = require("express").Router();
-const mercadopago = require('mercadopago');
 
 const ACCESS_TOKEN = process.env.ACCESS_TOKEN;
 
 server.post('/new', async (req, res) => {
+
+    const { title, quantity, unit_price } = req.body;
     const result = await axios.post(
         `https://api.mercadopago.com/checkout/preferences?access_token=${ACCESS_TOKEN}`,
         {
             items: [
                 {
-                    title: 'Mi Producto',
-                    quantity: 1,
+                    title,
+                    quantity,
                     currency_id: "ARS",
-                    unit_price: 500,
+                    unit_price,
                 },
             ],
-            external_reference: {
-                id: 'ksdkfkdsk320403024',
-            },
             back_urls: {
-                success: "https://www.tu-sitio/success",
+                success: "https://clone-mercadolibre.herokuapp.com/payments/sucess",
             },
             auto_return: "approved",
             payment_methods: {
@@ -30,8 +28,7 @@ server.post('/new', async (req, res) => {
             },
         }
     );
-
-    res.status(201).redirect(result.data.init_point);
+    res.status(201).json({ payment_link: result.data.init_point });
 })
 
 module.exports = server;

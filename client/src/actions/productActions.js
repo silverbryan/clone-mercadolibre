@@ -5,6 +5,7 @@ import {
     LOADING,
     LOADING_CATEGORIES,
     PRODUCT_DETAIL,
+    PAYMENT_LINK,
 } from '../constants';
 
 export const getCategories = () => {
@@ -45,4 +46,15 @@ export const getProductById = (id) => {
         success(response.data);
         setLoading(false);
     }
+}
+
+export const makePayment = productId => dispatch => {
+    axios.post('/payments/new')
+        .then(res => {
+            dispatch({
+                type: PAYMENT_LINK,
+                payload: res.data.payment_link,
+            })
+        })
+    //payments status
 }
