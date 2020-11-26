@@ -8,7 +8,7 @@ import {
 } from '../constants';
 
 export const getCategories = () => {
-    const request = axios.get('/search/categorys');
+    const request = axios.get(`${process.env.API_URL}/search/categorys`);
     return async dispatch => {
         function setLoading(status) {
             dispatch({ type: LOADING_CATEGORIES, payload: status })
@@ -27,7 +27,7 @@ export const getCategories = () => {
 }
 
 export const getProductById = (id) => {
-    const request = axios.get(`/products/${id}`);
+    const request = axios.get(`${process.env.API_URL}/products/${id}`);
     return async dispatch => {
         function setLoading(status) {
             dispatch({ type: LOADING, payload: status })
