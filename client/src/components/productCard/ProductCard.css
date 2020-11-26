@@ -9,6 +9,18 @@
     box-shadow: -1px 1px 5px 4px rgba(247,247,247,1);
 }
 
+.productCard__link {
+    text-decoration: none !important;
+    outline: none;
+    color: #3b3b3b;
+}
+
+.productCard__link :hover {
+    text-decoration: none !important;
+    font-weight: 700;
+    color: #3b3b3b;
+}
+
 .productCard__image {
     display: flex;
     width: 100%;

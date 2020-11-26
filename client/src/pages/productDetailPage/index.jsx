@@ -3,7 +3,6 @@ import { Container, Row, Col } from 'reactstrap';
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { getProductById } from '../../actions/productActions';
-import Skeleton from 'react-loading-skeleton';
 import "react-image-gallery/styles/css/image-gallery.css";
 import ImageGallery from 'react-image-gallery';
 import './ProductDetail.css';
@@ -29,13 +28,13 @@ const ProductDetail = () => {
 
     const isLoading = useSelector(state => state.appProperties.isLoading);
     const product = useSelector(state => state.products.productDetail);
-    console.log(isLoading);
+
     return (
         <Container fluid={true} className="productDetail">
             <Row>
                 <Col lg="8">
                     <div className="productDetail__images">
-                        {isLoading === false &&
+                        {isLoading &&
                             <ImageGallery
                                 items={product.images.map(image => {
                                     return {
