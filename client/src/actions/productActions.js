@@ -28,8 +28,8 @@ export const getCategories = () => {
 }
 
 export const getProductById = (id) => {
-    const request = axios.get('/products/' + id);
-
+    console.log(id);
+    const request = axios.get(`/products/${id}`);
     return async dispatch => {
         function setLoading(status) {
             dispatch({ type: LOADING, payload: status })

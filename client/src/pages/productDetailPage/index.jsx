@@ -1,12 +1,11 @@
 import React, { useEffect } from 'react'
 import { Container, Row, Col } from 'reactstrap';
-import { useParams, Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { getProductById } from '../../actions/productActions';
 import Skeleton from 'react-loading-skeleton';
 import "react-image-gallery/styles/css/image-gallery.css";
 import ImageGallery from 'react-image-gallery';
-
 import './ProductDetail.css';
 import Axios from 'axios';
 
@@ -26,11 +25,11 @@ const ProductDetail = () => {
             unit_price: product.price,
         })
         window.location.href = result.data.payment_link;
-
     }
+
     const isLoading = useSelector(state => state.appProperties.isLoading);
     const product = useSelector(state => state.products.productDetail);
-
+    console.log(isLoading);
     return (
         <Container fluid={true} className="productDetail">
             <Row>
