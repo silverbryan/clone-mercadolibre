@@ -28,7 +28,6 @@ const ProductDetail = () => {
         window.location.href = result.data.payment_link;
 
     }
-
     const isLoading = useSelector(state => state.appProperties.isLoading);
     const product = useSelector(state => state.products.productDetail);
 
