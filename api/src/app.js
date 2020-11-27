@@ -18,10 +18,6 @@ const buildDir = path.join(__dirname, '../../../client/build')
 
 server.use(express.static(buildDir));
 
-// server.get('*', (req, res) => {
-//     res.sendFile(path.join(buildDir, 'index.html'));
-// })
-
 server.use((req, res, next) => {
     res.header('Access-Control-Allow-Credentials', 'true');
     res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
