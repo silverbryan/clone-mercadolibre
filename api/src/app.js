@@ -14,9 +14,6 @@ server.use(cookieParser());
 server.use(morgan("dev"));
 server.use(cors());
 server.use(express.static(path.join(__dirname, '../../client/build')));
-server.use('*', (req, res) => {
-    res.sendFile(path.join(__dirname + '../../client/build/index.html'));
-})
 
 server.use((req, res, next) => {
     res.header('Access-Control-Allow-Credentials', 'true');
