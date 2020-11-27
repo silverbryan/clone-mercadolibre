@@ -2,10 +2,31 @@ import axios from 'axios';
 
 import {
     GET_CATEGORIES,
+    LOADING,
     LOADING_PRODUCT,
     LOADING_CATEGORIES,
     PRODUCT_DETAIL,
+    SEARCH,
 } from '../constants';
+
+export const getProductsHome = () => {
+    const request = axios.get(`/api/search?q=black%20friday&page=0`);
+    return async dispatch => {
+        function setLoading(status) {
+            dispatch({ type: LOADING, payload: status })
+        }
+        function success(data) {
+            dispatch({
+                type: SEARCH,
+                payload: data.results,
+            })
+        }
+        setLoading(true);
+        const response = await request;
+        success(response.data);
+        setLoading(false);
+    }
+}
 
 export const getCategories = () => {
     const request = axios.get('/api/search/categorys');

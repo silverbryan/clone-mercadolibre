@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Container, Row, Col } from 'reactstrap';
 import Catalogo from '../../components/catalogo';
 import Categories from '../../components/categories';
+import Banner from '../../components/banner';
 import SkeletonCategories from '../../components/skeletons/skeletonCategories';
 import SkeletonProducts from '../../components/skeletons/skeletonProducts';
 import { getCategories } from '../../actions/productActions';
@@ -16,8 +17,10 @@ const HomePage = () => {
         dispatch(getCategories());
     }, [])
 
-    // const isLoading = useSelector(state => state.appProperties.isLoading);
+    const isLoading = useSelector(state => state.appProperties.isLoading);
     const isLoadingCategories = useSelector(state => state.appProperties.isLoadingCategories);
+    const banners = useSelector(state => state.user)
+    const products = useSelector(state => state.user.recentResults.searchResults);
     const categories = useSelector(state => state.products.categories);
 
     return (
@@ -30,25 +33,11 @@ const HomePage = () => {
                         </div>
                     </Col>
                     <Col lg="9">
-                        <ProductsHome
-                            categories={categories}
-                        />
+                        <Banner banners={ } />
+                        <Catalogo products={products} />
                     </Col>
                 </Row>
             </Container>
-        </div>
-    );
-}
-
-const ProductsHome = ({ categories }) => {
-    const dispatch = useDispatch();
-
-    return (
-        <div className="products__home">
-            {/* {categories.map(category => {
-                dispatch()
-            })} */}
-            hello
         </div>
     );
 }
