@@ -26,15 +26,17 @@ const ProductDetail = () => {
         window.location.href = result.data.payment_link;
     }
 
-    const isLoading = useSelector(state => state.appProperties.isLoading);
+    const isLoading = useSelector(state => state.appProperties.isLoadingProduct);
     const product = useSelector(state => state.products.productDetail);
-
     return (
         <Container fluid={true} className="productDetail">
             <Row>
                 <Col lg="8">
                     <div className="productDetail__images">
-                        {isLoading &&
+                        {isLoading
+                            ?
+                            <div className="loading">Loading...</div>
+                            :
                             <ImageGallery
                                 items={product.images.map(image => {
                                     return {

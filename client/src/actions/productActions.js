@@ -2,7 +2,7 @@ import axios from 'axios';
 
 import {
     GET_CATEGORIES,
-    LOADING,
+    LOADING_PRODUCT,
     LOADING_CATEGORIES,
     PRODUCT_DETAIL,
 } from '../constants';
@@ -30,7 +30,7 @@ export const getProductById = (id) => {
     const request = axios.get(`/api/products/${id}`);
     return async dispatch => {
         function setLoading(status) {
-            dispatch({ type: LOADING, payload: status })
+            dispatch({ type: LOADING_PRODUCT, payload: status })
         }
         function success(data) {
             dispatch({
