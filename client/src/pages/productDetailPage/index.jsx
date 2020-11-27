@@ -18,7 +18,7 @@ const ProductDetail = () => {
 
     const handleOnClick = async e => {
         e.preventDefault();
-        const result = await Axios.post(`${process.env.API_URL}/payments/new`, {
+        const result = await Axios.post(`/api/payments/new`, {
             title: product.name,
             quantity: 1,
             unit_price: product.price,
