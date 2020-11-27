@@ -14,7 +14,7 @@ server.use(cookieParser());
 server.use(morgan("dev"));
 server.use(cors());
 
-const buildDir = path.join(__dirname, '../../client/build')
+const buildDir = path.join(__dirname, '../../../client/build')
 
 server.use(express.static(buildDir));
 
