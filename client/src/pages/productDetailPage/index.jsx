@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { Container, Row, Col } from 'reactstrap';
+import { Container } from 'reactstrap';
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { getProductById } from '../../actions/productActions';
@@ -30,8 +30,8 @@ const ProductDetail = () => {
     const product = useSelector(state => state.products.productDetail);
     return (
         <Container fluid={true} className="productDetail">
-            <Row>
-                <Col lg="8">
+            <div className="row productDetail__main">
+                <div className="col-lg-8 col-md-7 col-sm-12 col-xs-12">
                     <div className="productDetail__images">
                         {isLoading
                             ?
@@ -44,19 +44,15 @@ const ProductDetail = () => {
                                         thumbnail: image.xs,
                                     }
                                 })}
-                                thumbnailPosition={"left"}
                                 showFullscreenButton={false}
                                 showPlayButton={false}
                                 showNav={false}
                             />
                         }
                     </div>
-                </Col>
-                <Col lg="4">
+                </div>
+                <div className="col-lg-4 col-md-5 col-sm-12 col-xs-12">
                     <div className="productDetail__content">
-                        <div className="productDetail__subtitle">
-                            {product.condition + ' | ' + product.sold + ' vendidos'}
-                        </div>
                         <div className="productDetail__title">
                             {product.title}
                         </div>
@@ -120,9 +116,18 @@ const ProductDetail = () => {
                             </div>
                         </div>
                         <button onClick={handleOnClick} className="btn-buy">Comprar ahora</button>
+
                     </div>
-                </Col>
-            </Row >
+                </div>
+            </div>
+            <div className="productDetail__description">
+                <div className="productDetail__title">
+                    Descripcion
+                </div>
+                <div className="productDetail__text">
+                    Servicio no disponible :(
+                </div>
+            </div>
         </Container >
     );
 }
