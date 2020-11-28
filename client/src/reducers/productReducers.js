@@ -6,16 +6,6 @@ import {
 const initialState = {
     categories: [],
     productDetail: {},
-    promotionalBanners: [
-        {
-            original: 'https://http2.mlstatic.com/D_NQ_NP_673828-MLA44163917271_112020-F.jpg'
-        }, {
-            original: 'https://http2.mlstatic.com/D_NQ_NP_738867-MLA44153640976_112020-F.jpg'
-        }, {
-            original: 'https://http2.mlstatic.com/D_NQ_NP_764148-MLA44169695869_112020-F.jpg'
-        }, {
-            original: 'https://http2.mlstatic.com/D_NQ_NP_720065-MLA42641653712_072020-F.jpg'
-        }]
 }
 
 function productReducers(state = initialState, action) {

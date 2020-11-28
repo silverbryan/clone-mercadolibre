@@ -7,6 +7,7 @@ import {
     LOADING_CATEGORIES,
     PRODUCT_DETAIL,
     SEARCH,
+    SEARCH_BY_QUERY,
 } from '../constants';
 
 export const getProductsHome = () => {
@@ -18,7 +19,12 @@ export const getProductsHome = () => {
         function success(data) {
             dispatch({
                 type: SEARCH,
-                payload: data.results,
+                payload: {
+                    currentSearchTerm: 'black%20friday',
+                    currentSearchType: SEARCH_BY_QUERY,
+                    currentPage: 0,
+                    searchResults: data.results,
+                }
             })
         }
         setLoading(true);
