@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom'
 import { search } from '../../../actions/searchActions';
 import { SEARCH_BY_QUERY } from '../../../constants';
@@ -8,7 +8,6 @@ import './SearchBar.css';
 const SearchBar = () => {
     const dispatch = useDispatch();
     const history = useHistory();
-    const cache = useSelector(state => state.user.searchTerms);
 
     const [searchTerm, setSearchTerm] = useState("");
 
