@@ -24,6 +24,7 @@ server.get('/:id', (req, res) => {
                         return {
                             id: picture.id,
                             xl: picture.secure_url.replace('-O', '-F'),
+                            md: picture.secure_url,
                             xs: picture.secure_url.replace('-O', '-R'),
                         }
                     }),

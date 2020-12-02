@@ -5,7 +5,7 @@ import Catalogo from '../../components/catalogo';
 import Categories from '../../components/categories';
 import SkeletonCategories from '../../components/skeletons/skeletonCategories';
 import SkeletonProducts from '../../components/skeletons/skeletonProducts';
-import { getCategories } from '../../actions/productActions';
+import { getCategories, getProductsHome } from '../../actions/productActions';
 
 import './HomePage.css';
 
@@ -14,10 +14,12 @@ const HomePage = () => {
 
     useEffect(() => {
         dispatch(getCategories());
+        dispatch(getProductsHome());
     }, [])
 
-    // const isLoading = useSelector(state => state.appProperties.isLoading);
+    const isLoading = useSelector(state => state.appProperties.isLoading);
     const isLoadingCategories = useSelector(state => state.appProperties.isLoadingCategories);
+    const products = useSelector(state => state.user.recentResults.searchResults);
     const categories = useSelector(state => state.products.categories);
 
     return (
@@ -29,26 +31,15 @@ const HomePage = () => {
                             {isLoadingCategories ? <SkeletonCategories /> : <Categories categories={categories} />}
                         </div>
                     </Col>
-                    <Col lg="9">
-                        <ProductsHome
-                            categories={categories}
-                        />
+                    <Col lg="9" style={{ marginTop: '2rem' }}>
+
+                        {isLoading
+                            ? <SkeletonProducts />
+                            : <Catalogo products={products} />
+                        }
                     </Col>
                 </Row>
             </Container>
-        </div>
-    );
-}
-
-const ProductsHome = ({ categories }) => {
-    const dispatch = useDispatch();
-
-    return (
-        <div className="products__home">
-            {/* {categories.map(category => {
-                dispatch()
-            })} */}
-            hello
         </div>
     );
 }

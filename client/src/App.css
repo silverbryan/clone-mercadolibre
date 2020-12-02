@@ -19,7 +19,9 @@ body {
 }
 
 @media (min-width: 576px) {
-    
+    .productDetail {
+        font-size: 1.2em;
+    }    
 }
 
 @media (min-width: 768px) {
@@ -31,6 +33,9 @@ body {
     }
     .navbar-principal {
         justify-content: center;
+    }
+    .image-gallery-image {
+        height: 350px;
     }
 }
 
@@ -58,6 +63,12 @@ body {
     }
     .searchBar__form {
         width: 50%;
+    }
+    .productDetail {
+        font-size: 1.3em;
+    }
+    .image-gallery-image {
+        height: 400px;
     }
 }
 

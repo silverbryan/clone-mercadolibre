@@ -13,7 +13,10 @@ server.use(bodyParser.json({ limit: "50mb" }));
 server.use(cookieParser());
 server.use(morgan("dev"));
 server.use(cors());
-server.use(express.static(path.join(__dirname, '../../client/build')));
+
+const buildDir = path.join(__dirname, '../../../client/build')
+
+server.use(express.static(buildDir));
 
 server.use((req, res, next) => {
     res.header('Access-Control-Allow-Credentials', 'true');

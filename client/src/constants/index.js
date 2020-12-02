@@ -7,6 +7,7 @@ export const SEARCH_IN_CACHE = "SEARCH_IN_CACHE";
 //products
 export const GET_CATEGORIES = "GET_CATEGORIES";
 export const PRODUCT_DETAIL = "PRODUCT_DETAIL";
+export const PAYMENT_LINK = "PAYMENT_LINK";
 //modal
 export const MODAL_PRICE = "MODAL_PRICE";
 export const MODAL_CONDITION = "MODAL_CONDITION";
@@ -22,6 +23,7 @@ export const TOGGLE_NAVBAR_MENU = "TOGLE_NAVBAR_MENU";
 export const TOGGLE_MODAL = "TOGGLE_MODAL";
 export const LOADING = "LOADING";
 export const LOADING_CATEGORIES = 'LOADING_CATEGORIES';
+export const LOADING_PRODUCT = 'LOADING_PRODUCT';
 export const PRECIO_MEDIO = 3000;
 export const PRECIO_REGULAR = 5000;
 export const INCREMENT = "INCREMENT";

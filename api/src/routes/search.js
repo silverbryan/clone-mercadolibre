@@ -19,20 +19,16 @@ server.get('/', (req, res) => {
     }
     axios.get(request)
         .then(response => {
-            var data = response.data.results;
-            var arrResponse = [];
-            data.map(result => {
-                arrResponse.push(
-                    {
-                        id: result.id,
-                        title: result.title,
-                        price: result.price,
-                        currency_id: result.currency_id,
-                        available_quantity: result.available_quantity,
-                        thumbnail: result.thumbnail.replace('http', 'https').replace("-I", "-O"),
-                        condition: result.condition,
-                    }
-                )
+            const arrResponse = response.data.results.map(result => {
+                return {
+                    id: result.id,
+                    title: result.title,
+                    price: result.price,
+                    currency_id: result.currency_id,
+                    available_quantity: result.available_quantity,
+                    thumbnail: result.thumbnail.replace('http', 'https').replace("-I", "-O"),
+                    condition: result.condition,
+                }
             });
             res.status(200).json({ status: 'OK', results: arrResponse });
         })
@@ -46,16 +42,17 @@ server.get('/categorys', async (req, res) => {
 
     results.map(result => {
         promises.push(axios.get(PATH_BASE + '/categories/' + result.id))
-    })
+    });
     let allPromises = await Promise.all(promises)
-    var arrResults = [];
 
-    allPromises.map(promise => arrResults.push({
-        id: promise.data.id,
-        name: promise.data.name,
-        image: promise.data.picture.replace('http', 'https'),
-    }))
-    res.status(200).json({ results: arrResults })
+    const arrResults = allPromises.map(promise => {
+        return {
+            id: promise.data.id,
+            name: promise.data.name,
+            image: promise.data.picture.replace('http', 'https'),
+        }
+    });
+    res.status(200).json({ results: arrResults });
 })
 
 module.exports = server;

@@ -10,7 +10,7 @@
     "npm": ">=6.14.6"
   },
   "dependencies": {
-    "concurrently": "^4.0.1",
+    "concurrently": "^4.1.2",
     "rimraf": "^2.6.2"
   },
   "scripts": {

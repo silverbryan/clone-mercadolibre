@@ -17,7 +17,7 @@ const Modal = () => {
 
     const dispatch = useDispatch();
     const toggle = useSelector(state => state.appProperties.toggleModal);
-    const { type, name, children } = useSelector(state => state.appProperties.modalContent);
+    const { name, children } = useSelector(state => state.appProperties.modalContent);
 
     const handleOnClick = item => {
         if (item === PRECIO_MEDIO) dispatch(filterByMediumPrice());

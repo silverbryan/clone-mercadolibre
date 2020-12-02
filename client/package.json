@@ -2,7 +2,7 @@
   "name": "mercadolibre-app",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:5000/api",
+  "proxy": "http://localhost:5000",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
@@ -13,6 +13,7 @@
     "react": "^16.13.1",
     "react-bootstrap-icons": "^1.1.0",
     "react-dom": "^16.13.1",
+    "react-image-gallery": "^1.0.8",
     "react-loading-skeleton": "^2.1.1",
     "react-redux": "^7.2.1",
     "react-router-dom": "^5.2.0",

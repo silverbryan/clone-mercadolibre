@@ -5,6 +5,7 @@ import {
     MODAL_PRICE,
     LOADING,
     LOADING_CATEGORIES,
+    LOADING_PRODUCT,
 } from '../constants';
 
 const initialState = {
@@ -12,6 +13,7 @@ const initialState = {
     toggleModal: false,
     isLoading: true,
     isLoadingCategories: true,
+    isLoadingProduct: true,
     modalContent: {
         name: '',
         children: []
@@ -49,6 +51,11 @@ function applicationPropertiesReducers(state = initialState, action) {
             return {
                 ...state,
                 isLoadingCategories: action.payload,
+            }
+        case LOADING_PRODUCT:
+            return {
+                ...state,
+                isLoadingProduct: action.payload,
             }
         default:
             return state;
