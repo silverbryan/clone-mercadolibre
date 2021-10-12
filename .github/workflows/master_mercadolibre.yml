@@ -9,7 +9,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
+    env:
+      CI: false
     steps:
       - uses: actions/checkout@v2
 
@@ -19,8 +20,6 @@ jobs:
           node-version: '14.x'
 
       - name: Install and Build
-        env:
-          CI: false
         run: |
           npm install
           npm run install:app
