@@ -1,7 +1,4 @@
-# Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
-# More GitHub Actions for Azure: https://github.com/Azure/actions
-
-name: Build and deploy Node.js app to Azure Web App - mercadolibre
+name: clone-mercadolibre CI/CD
 
 on:
   push:
@@ -21,11 +18,11 @@ jobs:
         with:
           node-version: '14.x'
 
-      - name: npm install, build, and test
+      - name: Install & Build
         run: |
           npm install
-          npm run build --if-present
-          npm run test --if-present
+          npm run install:app
+          npm run build
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
@@ -50,7 +47,7 @@ jobs:
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
         with:
-          app-name: 'mercadolibre'
+          app-name: 'clone-mercadolibre'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_B4C9433DC8C04E27AB8BB383B57B8630 }}
           package: .
