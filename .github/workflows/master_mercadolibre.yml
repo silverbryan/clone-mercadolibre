@@ -18,17 +18,12 @@ jobs:
         with:
           node-version: '14.x'
 
-      - name: Install & Build
+      - name: Install and Build
         run: |
           npm install
           npm run install:app
-          npm run build
-
-      - name: Upload artifact for deployment job
-        uses: actions/upload-artifact@v2
-        with:
-          name: node-app
-          path: .
+          npm run build:client
+          npm run build:api
 
   deploy:
     runs-on: ubuntu-latest
