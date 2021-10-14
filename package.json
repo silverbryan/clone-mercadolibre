@@ -18,6 +18,8 @@
     "build:api": "cd api && npm run build",
     "clean": "concurrently \"cd client && rimraf node_modules build\" \"cd api && rimraf node_modules build\"",
     "install:app": "concurrently \"cd client && npm install\" \"cd api && npm install\"",
+    "install:api": "cd api && npm install",
+    "install:client": "cd client && npm install",
     "start": "concurrently \"cd client && npm run start\" \"cd api && npm run start\"",
     "start:prod": "cd api && npm run start:prod"
   }
