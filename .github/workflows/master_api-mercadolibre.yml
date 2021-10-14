@@ -52,5 +52,5 @@ jobs:
         with:
           app-name: 'api-mercadolibre'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_E594A3ED43C84828A374C05E1E12CD2A }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_881FCC2036DB4FFB81AA32F11942499D }}
           package: .
